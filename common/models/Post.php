@@ -46,10 +46,11 @@ class Post extends \yii\db\ActiveRecord
     {
         return [
             [['slug', 'author_id'], 'required'],
-            [['name', 'preview_text', 'text', 'title', 'keywords', 'description'], 'string'],
+            [['text'], 'string'],
             [['author_id', 'status', 'sort'], 'integer'],
             [['created_at', 'updated_at'], 'safe'],
-            [['slug'], 'string', 'max' => 255],
+            [['name', 'slug', 'title', 'keywords', 'description'], 'string', 'max' => 255],
+            [['preview_text'], 'string', 'max' => 500],
             [['slug'], 'unique'],
             [['author_id'], 'exist', 'skipOnError' => true, 'targetClass' => User::className(), 'targetAttribute' => ['author_id' => 'id']],
             [['image'], 'file', 'extensions' => 'png, jpg, gif', 'maxSize' => 1024 * 1024 * 3],
