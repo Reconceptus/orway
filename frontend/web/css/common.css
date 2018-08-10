@@ -1,0 +1,21 @@
+.text-box img:not(.right-align):not(.left-align) {
+    width: 380px !important;
+    height: auto !important;
+}
+
+.text-box img[margin="auto"] {
+    width: 100%;
+}
+
+.site-login, .site-request-password-reset, .site-reset-password {
+    margin-top: 100px;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+.btn--dark.active{
+    background-color: #17191f;
+    color: #fff
+}
