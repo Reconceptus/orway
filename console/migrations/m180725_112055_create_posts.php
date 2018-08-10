@@ -92,8 +92,10 @@ class m180725_112055_create_posts extends Migration
         $this->dropForeignKey('FK_post_author', 'post');
         $this->dropForeignKey('FK_comment_author', 'comment');
         $this->dropForeignKey('FK_comment_post', 'comment');
+        $this->dropForeignKey('FK_postLang_post', 'postLang');
 
         $this->dropTable('comment');
+        $this->dropTable('postLang');
         $this->dropTable('post_tag');
         $this->dropTable('tag');
         $this->dropTable('post');
