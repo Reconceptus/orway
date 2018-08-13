@@ -50,7 +50,10 @@ class BlogController extends Controller
             ['!=', 'pl.name', '']
         ]);
 
-        $tags = Tag::find()->where(['language' => Yii::$app->language])->limit(5)->all();
+        $tags = Tag::find()->alias('t')
+            ->joinWith('posts')
+            ->where(['status' => Post::STATUS_PUBLISHED])
+            ->andWhere(['language' => Yii::$app->language])->limit(5)->all();
         $dataProvider = new ActiveDataProvider([
             'query'      => $query,
             'pagination' => [
