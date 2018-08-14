@@ -15,7 +15,7 @@ class AdminAsset extends AssetBundle
     public $publishOptions = [
         'forceCopy' => true
     ];
-    public $jsOptions = ['position' => \yii\web\View::POS_HEAD];
+//    public $jsOptions = ['position' => \yii\web\View::POS_HEAD];
     public $basePath = '@admin/assets';
     public $sourcePath = '@admin/assets';
     public $css = [
