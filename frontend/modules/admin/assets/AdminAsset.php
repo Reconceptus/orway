@@ -16,8 +16,9 @@ class AdminAsset extends AssetBundle
         'forceCopy' => true
     ];
 //    public $jsOptions = ['position' => \yii\web\View::POS_HEAD];
-    public $basePath = '@admin/assets';
+    public $basePath = '@web';
     public $sourcePath = '@admin/assets';
+//    public $baseUrl = '@web';
     public $css = [
         'css/admin.css',
     ];
@@ -25,7 +26,7 @@ class AdminAsset extends AssetBundle
         'js/script.js'
     ];
     public $depends = [
-        'frontend\assets\AppAsset',
+//        'frontend\assets\AppAsset',
         'yii\bootstrap\BootstrapAsset',
     ];
 }
