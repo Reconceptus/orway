@@ -43,9 +43,7 @@ use yii\widgets\ListView;
                                     Html::addCssClass($options, 'active');
                                 }
                                 ?>
-                                <? if ($tag->posts): ?>
-                                    <li><?= Html::a($tag->name, Url::to(['index', 'tag' => $tag->name]), $options) ?></li>
-                                <? endif; ?>
+                                <li><?= Html::a($tag->name, Url::to(['index', 'tag' => $tag->name]), $options) ?></li>
                             <? endforeach; ?>
                         </ul>
                     </div>
