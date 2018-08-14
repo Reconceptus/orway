@@ -1,3 +1,32 @@
+@font-face {
+    font-family: Noto;
+    font-style: normal;
+    font-weight: 400;
+    src: url(../fonts/NotoSans.ttf), url(../fonts/NotoSans.woff), url(../fonts/NotoSans.eot)
+}
+
+@font-face {
+    font-family: Noto;
+    font-style: italic;
+    font-weight: 400;
+    src: url(../fonts/NotoSans-Italic.ttf), url(../fonts/NotoSans-Italic.woff), url(../fonts/NotoSans-Italic.eot)
+}
+
+@font-face {
+    font-family: Noto;
+    font-style: normal;
+    font-weight: 700;
+    src: url(../fonts/NotoSans-Bold.ttf), url(../fonts/NotoSans-Bold.woff), url(../fonts/NotoSans-Bold.eot)
+}
+
+@font-face {
+    font-family: Noto;
+    font-style: italic;
+    font-weight: 700;
+    src: url(../fonts/NotoSans-BoldItalic.ttf), url(../fonts/NotoSans-BoldItalic.woff), url(../fonts/NotoSans-BoldItalic.eot)
+}
+
+
 body {
     background-color: #FFF;
     font-family: Noto, sans-serif;
