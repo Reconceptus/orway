@@ -51,10 +51,9 @@ use yii\widgets\ListView;
                         <form action="/blog/search">
                             <div class="blog--search-field">
                                 <input type="text" name="q" placeholder="Type What you Search...">
+                                <button type="reset" class="reset">&times;</button>
                                 <button type="submit" class="submit">
-                                    <svg class="icon icon--search">
-                                        <use xlink:href="#icon-search"></use>
-                                    </svg>
+                                    <svg class="icon icon--search"><use xlink:href="#icon-search"></use></svg>
                                 </button>
                             </div>
                         </form>
