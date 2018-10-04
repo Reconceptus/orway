@@ -17,6 +17,7 @@ $this->registerMetaTag(['name' => 'keywords', 'content' => $model->keywords]);
 $this->registerMetaTag(['name' => 'description', 'content' => $model->description]);
 $this->title = $model->title;
 ?>
+<?= \frontend\widgets\layout\Layout::widget(['viewName' => 'header']) ?>
 <div id="main" class="main">
 
     <div class="section section--article">
@@ -39,7 +40,6 @@ $this->title = $model->title;
             </article>
         </div>
     </div>
-
     <?= \frontend\widgets\recommendation\Recommendation::widget(['model' => $model]) ?>
-
 </div>
+<?= \frontend\widgets\layout\Layout::widget(['viewName' => 'footer']) ?>

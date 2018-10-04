@@ -15,6 +15,7 @@ use yii\widgets\ListView;
 /* @var $showTags bool */
 /* @var $mainTag string */
 ?>
+<?= \frontend\widgets\layout\Layout::widget(['viewName' => 'header']) ?>
 <div id="main" class="main">
 
     <div class="section section--blog">
@@ -107,3 +108,4 @@ use yii\widgets\ListView;
     </div>
 
 </div>
+<?= \frontend\widgets\layout\Layout::widget(['viewName' => 'footer']) ?>

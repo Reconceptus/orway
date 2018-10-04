@@ -42,61 +42,7 @@ AppAsset::register($this);
     </svg>
 </div>
 <div id="wrapper">
-    <div class="container">
-        <header id="header" class="header">
-            <div class="content content--lg">
-                <div class="header--main">
-                    <input type="checkbox" class="hide burger--check" id="burgerMenu">
-                    <?= Html::a('<img src="/svg/icons/logo-light.svg" alt="ORWAY" width="154" height="35">', \yii\helpers\Url::to('/'), ['class' => 'logo']) ?>
-                    <label for="burgerMenu" class="burger">
-                        <span></span>
-                    </label>
-                    <nav class="nav" id="nav">
-                        <ul class="nav--menu">
-                            <? if (Yii::$app->user->can('adminPanel')): ?>
-                                <li><a href="/admin">admin</a></li>
-                            <? endif; ?>
-                            <? if (!Yii::$app->user->isGuest): ?>
-                                <li><?= Html::a('logout', \yii\helpers\Url::to('/site/logout')) ?></li>
-                            <? endif; ?>
-                            <li><?= Html::a('technology', \yii\helpers\Url::to('/blog')) ?></li>
-                            <li><a href="#">events</a></li>
-                            <li><a href="#">products</a></li>
-                            <li><a href="#">about</a></li>
-                        </ul>
-                        <?= \frontend\modules\translate\widgets\select\Select::widget() ?>
-                        <div class="request">
-                            <button class="btn btn--light show-modal" data-modal="request" type="button">request
-                            </button>
-                        </div>
-                    </nav>
-                </div>
-            </div>
-        </header>
-
-<!--        --><?//= Alert::widget() ?>
-        <?= $content ?>
-
-
-        <footer class="footer">
-            <div class="content content--lg">
-                <div class="footer--main">
-                    <?= \frontend\widgets\pages\Pages::widget() ?>
-                    <nav class="nav">
-                        <ul class="nav--menu">
-                            <li><a href="#">technology</a></li>
-                            <li><a href="#">events</a></li>
-                            <li><a href="#">products</a></li>
-                            <li><a href="#">about</a></li>
-                        </ul>
-                        <div class="request">
-                            <button class="btn btn--dark show-modal" data-modal="request" type="button">request</button>
-                        </div>
-                    </nav>
-                </div>
-            </div>
-        </footer>
-    </div>
+    <?= $content ?>
 </div>
 <?= \frontend\widgets\request\Request::widget() ?>
 

@@ -11,8 +11,8 @@ $this->registerMetaTag(['name' => 'keywords', 'content' => $model->keywords]);
 $this->registerMetaTag(['name' => 'description', 'content' => $model->description]);
 $this->title = $model->title;
 ?>
+<?= \frontend\widgets\layout\Layout::widget(['viewName' => 'header']) ?>
 <div id="main" class="main">
-
     <div class="section section--article">
         <div class="content content--sm">
             <article class="single-article">
@@ -27,3 +27,4 @@ $this->title = $model->title;
         </div>
     </div>
 </div>
+<?= \frontend\widgets\layout\Layout::widget(['viewName' => 'footer']) ?>

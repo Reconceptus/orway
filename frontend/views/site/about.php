@@ -2,15 +2,29 @@
 
 /* @var $this yii\web\View */
 
-use yii\helpers\Html;
-
 $this->title = 'About';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="site-about">
-    <h1><?= Html::encode($this->title) ?></h1>
+<?=\frontend\widgets\layout\Layout::widget(['viewName'=>'header-about'])?>
+    <div id="main" class="main">
 
-    <p>This is the About page. You may modify the following file to customize its content:</p>
+        <div class="section">
+            <div class="about-head">
+                <div class="bg-word">Our story</div>
+                <div class="content content--sm">
+                    <h1 class="page-title">About Us</h1>
+                </div>
+            </div>
+            <div class="about-text">
+                <div class="content">
+                    <div>
+                        <p>Orway is a technology company founded by veterans of the biometric industry, which brought about the whole set of required competencies in R&D, market vision, and business management. Orway was established as a visionary response to the market's need for a biometric authentication technology that is characterized by strong anti-spoofing protection and the highest level of identification. An early start gave Orway an important advance of 2 to 3 years to stay ahead of competitors. Enormous and unique expertise allows a response to other ongoing requests of the biometric market for new products and thus diversifies what Orway has to offer.</p>
+                        <p>Orway was founded in 2017, but its history goes back to 1984, when work commenced on creating a theoretical tool that would make the building of computerized models of anything possible, the first step toward true AI. After 10 years of scientific research, a whole new and unique science was developed for this purpose. In 1994, practical implementation commenced on the development of biometric identification technologies. Several generations of technology and different commercial products were developed. After some mergers, acquisitions, and exits, Orway was born. It was based on a new generation of biometric technology that achieved the theoretical maximum of identification precision and overcame the supposedly impossible problem of absolute anti-spoofing protection (liveness detection).</p>
+                    </div>
+                </div>
+            </div>
 
-    <code><?= __FILE__ ?></code>
-</div>
+        </div>
+
+    </div>
+<?=\frontend\widgets\layout\Layout::widget(['viewName'=>'footer'])?>
