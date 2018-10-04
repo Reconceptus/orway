@@ -21,7 +21,8 @@ use yii\helpers\Html;
                 <? $form = \yii\widgets\ActiveForm::begin([
                     'action'                 => \yii\helpers\Url::to('/site/request'),
                     'method'                 => 'post',
-                    'enableClientValidation' => true
+                    'enableClientValidation' => true,
+                    'id'                   => 'request-form'
                 ]) ?>
                 <div class="request-form--fieldset">
                     <div class="form--field">
@@ -60,9 +61,12 @@ use yii\helpers\Html;
                         <div class="captcha">
                             <?= $form->field($model, 'reCaptcha')->widget(\himiklab\yii2\recaptcha\ReCaptcha::className()) ?>
                         </div>
-                        <?= Html::submitButton('Send', ['class' => 'btn btn--square-light']) ?>
+                        <div class="btn btn--square-light js-request">Send</div>
                     </div>
                     <input type="hidden" name="back" value="<?= Yii::$app->request->absoluteUrl ?>">
+                    <div class="thanks-box">
+                        <div class="txt">Thank You!</div>
+                    </div>
                 </div>
                 <? $form::end() ?>
             </div>

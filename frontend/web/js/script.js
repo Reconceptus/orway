@@ -5,7 +5,7 @@ $(function () {
         button.attr('disabled', true);
         var container = button.closest('.add-comment');
         var accept = container.find('.comment-accept').is(':checked');
-        if(accept===true){
+        if (accept === true) {
             accept = 1;
         }
         if (!accept) {
@@ -22,7 +22,7 @@ $(function () {
         }
         $.ajax({
             type: 'POST',
-            url: '/'+lang+'/blog/add-comment',
+            url: '/' + lang + '/blog/add-comment',
             data: {
                 postId: postId,
                 name: name,
@@ -45,5 +45,10 @@ $(function () {
                 $('#editFrom').hide();
             }
         });
+    });
+    $(document).on('click', '.js-request', function () {
+        var button = $(this);
+        button.closest('.request-form').addClass('success');
+        $('#request-form').submit();
     });
 });
