@@ -8,15 +8,21 @@
 
 use yii\helpers\Html;
 
+/* @var $model \common\models\Post */
 /* @var $newComment \common\models\Comment */
 ?>
 <div class="comments-section">
+    <div class="comments-title">
+        <div class="total"><span id="total-comments"><?= count($model->comments) ?></span> comments</div>
+        <a href="#reply">Live a Reply</a>
+    </div>
     <div class="comments">
         <? foreach ($model->comments as $comment): ?>
             <?= $this->render('_comment_box', ['model' => $comment]) ?>
         <? endforeach; ?>
     </div>
     <div class="add-comment" data-lang="<?= Yii::$app->language ?>">
+        <a name="reply"></a>
         <div><h2 class="control-label">Leave a reply</h2></div>
         <div class="comments-form">
             <?= Html::input('hidden', 'post_id', $model->id, ['class' => 'comment-post-id']) ?>

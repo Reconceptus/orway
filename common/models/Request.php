@@ -7,14 +7,15 @@ use Yii;
 /**
  * This is the model class for table "request".
  *
- * @property int $id
+ * @property int    $id
  * @property string $name
  * @property string $contact_info
  * @property string $message
- * @property int $accept
+ * @property int    $accept
  */
 class Request extends \yii\db\ActiveRecord
 {
+    public $reCaptcha;
     /**
      * {@inheritdoc}
      */
@@ -32,6 +33,7 @@ class Request extends \yii\db\ActiveRecord
             [['message'], 'string'],
             [['accept'], 'integer'],
             [['name', 'contact_info'], 'string', 'max' => 255],
+            [['reCaptcha'], \himiklab\yii2\recaptcha\ReCaptchaValidator::className()]
         ];
     }
 
@@ -41,11 +43,11 @@ class Request extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id' => Yii::t('app', 'ID'),
-            'name' => Yii::t('app', 'Name'),
+            'id'           => Yii::t('app', 'ID'),
+            'name'         => Yii::t('app', 'Name'),
             'contact_info' => Yii::t('app', 'Contact Info'),
-            'message' => Yii::t('app', 'Message'),
-            'accept' => Yii::t('app', 'Accept'),
+            'message'      => Yii::t('app', 'Message'),
+            'accept'       => Yii::t('app', 'Accept'),
         ];
     }
 }

@@ -34,10 +34,8 @@ $this->title = $model->title;
                 <div class="text-box">
                     <?= $model->text ?>
                 </div>
-                <div class="clearfix"></div>
-                <?= $this->render('_comments', ['newComment' => $newComment, 'model' => $model]) ?>
-                <div class="clearfix"></div>
                 <?= \frontend\widgets\share\Share::widget(['model' => $model]) ?>
+                <?= $this->render('_comments', ['newComment' => $newComment, 'model' => $model]) ?>
             </article>
         </div>
     </div>

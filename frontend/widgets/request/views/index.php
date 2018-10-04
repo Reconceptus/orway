@@ -57,6 +57,9 @@ use yii\helpers\Html;
                         </div>
                     </div>
                     <div class="submit">
+                        <div class="captcha">
+                            <?= $form->field($model, 'reCaptcha')->widget(\himiklab\yii2\recaptcha\ReCaptcha::className()) ?>
+                        </div>
                         <?= Html::submitButton('Send', ['class' => 'btn btn--square-light']) ?>
                     </div>
                     <input type="hidden" name="back" value="<?= Yii::$app->request->absoluteUrl ?>">

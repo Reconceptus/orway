@@ -21,7 +21,8 @@
         "vova07/yii2-imperavi-widget": "*",
         "yiisoft/yii2-imagine": "^2.1",
         "codemix/yii2-localeurls": "^1.7",
-        "omgdef/yii2-multilingual-behavior": "^2.1"
+        "omgdef/yii2-multilingual-behavior": "^2.1",
+        "himiklab/yii2-recaptcha-widget": "*"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.0.0",

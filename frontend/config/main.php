@@ -15,6 +15,10 @@ return [
     'sourceLanguage'      => 'en',
     'language'            => 'en',
     'components'          => [
+        'reCaptcha' => [
+            'name' => 'reCaptcha',
+            'class' => 'himiklab\yii2\recaptcha\ReCaptcha',
+        ],
         'mailer'       => [
             'class' => 'yii\swiftmailer\Mailer',
         ],
