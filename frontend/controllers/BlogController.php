@@ -57,7 +57,7 @@ class BlogController extends Controller
         $dataProvider = new ActiveDataProvider([
             'query'      => $query,
             'pagination' => [
-                'pageSize' => 3,
+                'pageSize' => 30,
             ],
             'sort'       => [
                 'defaultOrder' => [
