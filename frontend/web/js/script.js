@@ -16,7 +16,7 @@ $(function () {
             $('.accept-error').text('');
             var name = container.find('.comment-name').val();
             var email = container.find('.comment-email').val();
-            var text = container.find('.comment-text').val();
+            var text = container.find('.comment-text-input').val();
             var postId = container.find('.comment-post-id').val();
             var lang = container.data('lang');
         }
@@ -35,7 +35,7 @@ $(function () {
                     $('.comments').append(data.box);
                     container.find('.comment-name').val('');
                     container.find('.comment-email').val('');
-                    container.find('.comment-text').val('');
+                    container.find('.comment-text-input').val('');
                     container.find('.comment-accept').attr("checked", false);
                     button.attr('disabled', false);
                 } else {

@@ -52,10 +52,6 @@ class PageController extends AdminController
                 'url'              => '/uploads/images/posts', // Directory URL address, where files are stored.
                 'path'             => '@webroot/uploads/images/posts', // Or absolute path to directory where files are stored.
                 'translit'         => true,
-                'validatorOptions' => [
-                    'maxWidth'  => 1200,
-                    'maxHeight' => 1000
-                ],
             ],
             ''
         ];
