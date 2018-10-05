@@ -19,7 +19,7 @@ class Articles extends Widget
 
     public function run()
     {
-        $models = Post::find()->localized(Yii::$app->language)->limit(3)->orderBy(['id' => SORT_DESC])->all();
+        $models = Post::find()->localized(Yii::$app->language)->where(['to_main' => 1])->limit(3)->orderBy(['id' => SORT_DESC])->all();
         $content = $this->render($this->viewName, ['models' => $models]);
 
         return $content;

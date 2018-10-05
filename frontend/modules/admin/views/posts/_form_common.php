@@ -12,6 +12,7 @@ use yii\helpers\Html;
 ?>
 <?= Html::hiddenInput('old-image', $model->image) ?>
 <?= $form->field($model, 'slug') ?>
+<?= $form->field($model, 'to_main')->checkbox() ?>
 <?= $form->field($model, 'status')->dropDownList([Post::STATUS_PUBLISHED => 'published', Post::STATUS_NOT_PUBLISHED => 'hidden']) ?>
 <div class="preview-image-block" data-id="<?= $model->id ?>">
     <?
