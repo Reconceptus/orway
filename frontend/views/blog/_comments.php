@@ -31,7 +31,7 @@ use yii\helpers\Html;
                     <label>
                         <div class="label">Comment</div>
                         <div class="input">
-                            <?= Html::textarea('text', '', ['rows' => 3, 'placeholder' => 'Type your comment', 'class' => 'comment-text']) ?>
+                            <?= Html::textarea('text', '', ['rows' => 3, 'placeholder' => 'Type your comment', 'class' => 'comment-text-input']) ?>
                         </div>
                     </label>
                 </div>
