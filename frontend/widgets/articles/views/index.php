@@ -20,7 +20,7 @@
                                 <a href="/blog/<?= $model->slug ?>" class="article--box">
                                     <div class="article--data">
                                         <time class="article--date"><?= date('d M Y', strtotime($model->created_at)) ?></time>
-                                        <span class="article--tag"><?= $model->tags[0]->name ?></span>
+                                        <span class="article--tag"><?= $model->tags ? $model->tags[0]->name: ''?></span>
                                         <h4 class="article--title">
                                             <span><?= $model->name ?></span>
                                         </h4>
