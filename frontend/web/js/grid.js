@@ -1,2 +1,3 @@
-
-$('.grid').grid('.article');
+if($('.article')){
+    $('.grid').grid('.article');
+}
