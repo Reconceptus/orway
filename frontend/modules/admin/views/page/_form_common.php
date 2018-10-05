@@ -11,6 +11,7 @@ use yii\helpers\Html;
 ?>
 <?= Html::hiddenInput('old-image', $model->image) ?>
 <?= $form->field($model, 'slug') ?>
+<?= $form->field($model, 'to_footer')->checkbox() ?>
 <div class="preview-image-block" data-id="<?= $model->id ?>">
     <?
     if ($model->image && file_exists(Yii::getAlias('@webroot', $model->image))) {
