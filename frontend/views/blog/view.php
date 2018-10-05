@@ -17,6 +17,7 @@ $this->registerMetaTag(['name' => 'keywords', 'content' => $model->keywords]);
 $this->registerMetaTag(['name' => 'description', 'content' => $model->description]);
 $this->title = $model->title;
 ?>
+<?= \frontend\widgets\layout\Layout::widget(['viewName' => 'header']) ?>
 <div id="main" class="main">
 
     <div class="section section--article">
@@ -34,14 +35,11 @@ $this->title = $model->title;
                 <div class="text-box">
                     <?= $model->text ?>
                 </div>
-                <div class="clearfix"></div>
-                <?= $this->render('_comments', ['newComment' => $newComment, 'model' => $model]) ?>
-                <div class="clearfix"></div>
                 <?= \frontend\widgets\share\Share::widget(['model' => $model]) ?>
+                <?= $this->render('_comments', ['newComment' => $newComment, 'model' => $model]) ?>
             </article>
         </div>
     </div>
-
     <?= \frontend\widgets\recommendation\Recommendation::widget(['model' => $model]) ?>
-
 </div>
+<?= \frontend\widgets\layout\Layout::widget(['viewName' => 'footer']) ?>

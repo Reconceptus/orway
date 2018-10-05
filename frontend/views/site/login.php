@@ -11,44 +11,39 @@ use yii\widgets\ActiveForm;
 $this->title = 'Login';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div id="main" class="main">
-    <div class="content content--xs">
-        <h1><?= Html::encode($this->title) ?></h1>
-
-
-        <div class="row">
-            <div class="col-lg-5">
-                <?php $form = ActiveForm::begin(['id' => 'login-form']); ?>
-                <div class="form--field">
-                        <?= Html::activeLabel($model, 'username', ['class' => 'label']) ?>
-                        <div class="input">
-                            <?= Html::activeTextInput($model, 'username', ['autofocus' => true]) ?>
+<?= \frontend\widgets\layout\Layout::widget(['viewName' => 'header-dark']) ?>
+    <div id="main" class="main">
+        <div class="section section--login">
+            <div class="content content--xs">
+                <div class="login-form">
+                    <h1 class="login-form--title"><?= Html::encode($this->title) ?></h1>
+                    <?php $form = ActiveForm::begin(['id' => 'login-form']); ?>
+                    <div class="login-form--fieldset">
+                        <div class="form--field">
+                            <?= Html::activeLabel($model, 'username', ['class' => 'label']) ?>
+                            <div class="input">
+                                <?= Html::activeTextInput($model, 'username', ['autofocus' => true]) ?>
+                            </div>
                         </div>
-                </div>
-                <div class="form--field">
-                        <?= Html::activeLabel($model, 'password', ['class' => 'label']) ?>
-                        <div class="input">
-                            <?= Html::activePasswordInput($model, 'password') ?>
+                        <div class="form--field">
+                            <?= Html::activeLabel($model, 'password', ['class' => 'label']) ?>
+                            <div class="input">
+                                <?= Html::activePasswordInput($model, 'password') ?>
+                            </div>
                         </div>
-                </div>
-                <div class="form--field">
-                    <div class="check">
-                        <label>
-                            <?= Html::activeCheckbox($model, 'rememberMe') ?>
-                            <span class="check-text">Remember Me.</span>
-                        </label>
+                        <div class="form--field">
+                            <div class="txt">
+                                If you forgot your password you
+                                can <?= Html::a('reset it', ['site/request-password-reset']) ?>.
+                            </div>
+                        </div>
+                        <div class="submit">
+                            <button type="submit" class="btn btn--square-light">Send</button>
+                        </div>
                     </div>
+                    <?php ActiveForm::end(); ?>
                 </div>
-                <div style="color:#999;margin:1em 0">
-                    If you forgot your password you can <?= Html::a('reset it', ['site/request-password-reset']) ?>.
-                </div>
-
-                <div class="form-group">
-                    <?= Html::submitButton('Login', ['class' => 'btn btn--square-dark', 'name' => 'login-button']) ?>
-                </div>
-
-                <?php ActiveForm::end(); ?>
             </div>
         </div>
     </div>
-</div>
+<?= \frontend\widgets\layout\Layout::widget(['viewName' => 'footer']) ?>

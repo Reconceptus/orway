@@ -12,6 +12,9 @@ use yii\helpers\ArrayHelper;
  *
  * @property int $id
  * @property string $slug
+ * @property string $name
+ * @property string $text
+ * @property string $title
  * @property int $author_id
  * @property string $image
  * @property string $created_at

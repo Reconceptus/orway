@@ -14,14 +14,11 @@ use yii\widgets\Pjax;
 /* @var $showTags bool */
 /* @var $q string */
 ?>
+<?= \frontend\widgets\layout\Layout::widget(['viewName' => 'header']) ?>
 <div id="main" class="main">
-
     <div class="section section--blog">
-
         <div class="content content--md">
-
             <h1 class="page-title">Search results</h1>
-
             <div class="blog--listing">
                 <div class="blog--filters">
                     <div class="blog--tags hidden">
@@ -73,9 +70,7 @@ use yii\widgets\Pjax;
                     ?>
                 </div>
             </div>
-
         </div>
-
     </div>
-
 </div>
+<?= \frontend\widgets\layout\Layout::widget(['viewName' => 'footer']) ?>
