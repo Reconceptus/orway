@@ -7,7 +7,7 @@
  */
 ?>
 <footer class="footer">
-    <div class="content content--lg">
+    <div class="content">
         <div class="footer--main">
             <?= \frontend\widgets\pages\Pages::widget() ?>
             <nav class="nav">

@@ -10,24 +10,25 @@ use yii\helpers\ArrayHelper;
 /**
  * This is the model class for table "post".
  *
- * @property int $id
- * @property string $slug
- * @property string $name
- * @property string $text
- * @property string $title
- * @property int $author_id
- * @property string $image
- * @property string $created_at
- * @property string $updated_at
- * @property int $status
- * @property int $sort
+ * @property int        $id
+ * @property string     $slug
+ * @property string     $name
+ * @property string     $text
+ * @property string     $title
+ * @property int        $author_id
+ * @property string     $image
+ * @property string     $created_at
+ * @property string     $updated_at
+ * @property int        $status
+ * @property int        $sort
+ * @property bool       $to_main
  *
- * @property Comment[] $comments
- * @property User $author
+ * @property Comment[]  $comments
+ * @property User       $author
  * @property PostLang[] $postLangs
- * @property PostTag[] $postTags
- * @property Tag[] $langTags
- * @property Tag[] $tags
+ * @property PostTag[]  $postTags
+ * @property Tag[]      $langTags
+ * @property Tag[]      $tags
  */
 class Post extends \yii\db\ActiveRecord
 {
@@ -50,7 +51,7 @@ class Post extends \yii\db\ActiveRecord
         return [
             [['slug', 'author_id'], 'required'],
             [['text'], 'string'],
-            [['author_id', 'status', 'sort'], 'integer'],
+            [['author_id', 'status', 'sort', 'to_main'], 'integer'],
             [['created_at', 'updated_at'], 'safe'],
             [['name', 'slug', 'title', 'keywords', 'description'], 'string', 'max' => 255],
             [['preview_text'], 'string', 'max' => 500],
@@ -70,6 +71,7 @@ class Post extends \yii\db\ActiveRecord
             'slug'       => Yii::t('app', 'Slug'),
             'author_id'  => Yii::t('app', 'Author ID'),
             'image'      => Yii::t('app', 'Image'),
+            'to_main'    => Yii::t('app', 'Show on main page'),
             'created_at' => Yii::t('app', 'Created At'),
             'updated_at' => Yii::t('app', 'Updated At'),
             'status'     => Yii::t('app', 'Status'),
@@ -81,17 +83,17 @@ class Post extends \yii\db\ActiveRecord
     {
         return [
             'ml' => [
-                'class'            => MultilingualBehavior::className(),
-                'languages'        => Yii::$app->params['languages'],
-                'languageField'    => 'language',
+                'class'           => MultilingualBehavior::className(),
+                'languages'       => Yii::$app->params['languages'],
+                'languageField'   => 'language',
                 //'localizedPrefix' => '',
                 //'requireTranslations' => false',
-//                'dynamicLangClass' => true,
-                'langClassName'    => PostLang::className(), // or namespace/for/a/class/PostLang
-                'defaultLanguage'  => Yii::$app->params['defaultLanguage'],
-                'langForeignKey'   => 'post_id',
-                'tableName'        => "postLang",
-                'attributes'       => [
+                //                'dynamicLangClass' => true,
+                'langClassName'   => PostLang::className(), // or namespace/for/a/class/PostLang
+                'defaultLanguage' => Yii::$app->params['defaultLanguage'],
+                'langForeignKey'  => 'post_id',
+                'tableName'       => "postLang",
+                'attributes'      => [
                     'name', 'preview_text', 'text', 'title', 'keywords', 'description'
                 ]
             ],
