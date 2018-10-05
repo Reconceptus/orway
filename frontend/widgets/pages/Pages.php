@@ -19,11 +19,11 @@ class Pages extends Widget
 
     public function run()
     {
-        if(!$this->pages) {
+        if (!$this->pages) {
             $cache = Yii::$app->cache;
             $language = Yii::$app->language;
             $this->pages = $cache->getOrSet('pages_' . $language, function () use ($language) {
-                return Page::find()->localized($language)->all();
+                return Page::find()->localized($language)->where(['to_footer' => 1])->all();
             }, 1000);
         }
         $content = $this->render($this->viewName, ['pages' => $this->pages]);

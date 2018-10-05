@@ -9,11 +9,12 @@ use Yii;
 /**
  * This is the model class for table "page".
  *
- * @property int $id
- * @property string $slug
- * @property string $image
- * @property string $created_at
- * @property string $updated_at
+ * @property int        $id
+ * @property string     $slug
+ * @property int        $to_footer
+ * @property string     $image
+ * @property string     $created_at
+ * @property string     $updated_at
  *
  * @property PageLang[] $pageLangs
  */
@@ -40,7 +41,7 @@ class Page extends \yii\db\ActiveRecord
                 //'localizedPrefix' => '',
                 //'requireTranslations' => false',
                 'dynamicLangClass' => true,
-//                'langClassName'    => PageLang::className(), // or namespace/for/a/class/PostLang
+                //                'langClassName'    => PageLang::className(), // or namespace/for/a/class/PostLang
                 'defaultLanguage'  => Yii::$app->params['defaultLanguage'],
                 'langForeignKey'   => 'page_id',
                 'tableName'        => "pageLang",
@@ -61,6 +62,7 @@ class Page extends \yii\db\ActiveRecord
             [['name', 'slug', 'keywords', 'description'], 'string', 'max' => 255],
             [['created_at', 'updated_at'], 'safe'],
             [['text', 'title'], 'string'],
+            ['to_footer', 'integer'],
             [['image'], 'file', 'extensions' => 'png, jpg, gif', 'maxSize' => 1024 * 1024 * 3],
         ];
     }
@@ -71,9 +73,10 @@ class Page extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id' => Yii::t('app', 'ID'),
-            'slug' => Yii::t('app', 'Slug'),
-            'image' => Yii::t('app', 'Image'),
+            'id'         => Yii::t('app', 'ID'),
+            'slug'       => Yii::t('app', 'Slug'),
+            'image'      => Yii::t('app', 'Image'),
+            'to_footer'  => Yii::t('app', 'Show link in footer'),
             'created_at' => Yii::t('app', 'Created At'),
             'updated_at' => Yii::t('app', 'Updated At'),
         ];

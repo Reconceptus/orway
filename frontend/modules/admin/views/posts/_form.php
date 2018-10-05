@@ -44,6 +44,6 @@ $viewPostClass = $model->isNewRecord || !$model->status ? 'btn btn-admin disable
 <?= Html::submitButton('Save', ['class' => 'btn btn-admin save-post']) ?>
 <? ActiveForm::end() ?>
 <div class="buttons-panel" title="<?= $model->isNewRecord || !$model->status ? 'The post was not published' : '' ?>">
-    <?= Html::button('cancel', ['class' => 'btn btn-admin']) ?>
+    <?= Html::a('cancel', Url::to('/admin/posts'), ['class' => 'btn btn-admin']) ?>
     <?= Html::a('Go to post', Url::to('/blog/' . $model->slug), ['target' => '_blank', 'class' => $viewPostClass]) ?>
 </div>
