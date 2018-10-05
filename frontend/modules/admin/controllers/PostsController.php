@@ -176,7 +176,7 @@ class PostsController extends AdminController
         $get = Yii::$app->request->get();
         $postId = (int)$get['postId'];
         if ($postId) {
-            $post = Post::findOne($postId);
+            $post = Post::findOne(['id'=>$postId]);
             if ($post && $post->image) {
                 $fileName = '@webroot' . $post->image;
                 if (file_exists($fileName)) {
@@ -184,7 +184,7 @@ class PostsController extends AdminController
                 }
                 $post->image = null;
                 if ($post->save()) {
-                    return ['status' => 'success'];
+                    return $this->redirect(Yii::$app->request->referrer);
                 }
             }
         }

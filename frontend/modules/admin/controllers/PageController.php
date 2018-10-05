@@ -25,11 +25,11 @@ class PageController extends AdminController
     {
         $behaviors = parent::behaviors();
         $behaviors['access'] = [
-            'class' => AccessControl::className(),
+            'class'        => AccessControl::className(),
             'denyCallback' => function ($rule, $action) {
                 return $this->redirect('/');
             },
-            'rules' => [
+            'rules'        => [
                 [
                     'actions' => [],
                     'allow'   => true,
@@ -41,6 +41,7 @@ class PageController extends AdminController
         ];
         return $behaviors;
     }
+
     /**
      * @return array
      */
@@ -48,10 +49,10 @@ class PageController extends AdminController
     {
         return [
             'image-upload' => [
-                'class'            => 'vova07\imperavi\actions\UploadFileAction',
-                'url'              => '/uploads/images/posts', // Directory URL address, where files are stored.
-                'path'             => '@webroot/uploads/images/posts', // Or absolute path to directory where files are stored.
-                'translit'         => true,
+                'class'    => 'vova07\imperavi\actions\UploadFileAction',
+                'url'      => '/uploads/images/posts', // Directory URL address, where files are stored.
+                'path'     => '@webroot/uploads/images/posts', // Or absolute path to directory where files are stored.
+                'translit' => true,
             ],
             ''
         ];
@@ -125,7 +126,7 @@ class PageController extends AdminController
                     $model->image = '/uploads/images/post-preview/' . $path . $fileName;
                     $photo = Image::getImagine()->open($dir . $path . $fileName);
                     $photo->thumbnail(new Box(800, 800))->save($dir . $path . $fileName, ['quality' => 90]);
-                }else{
+                } else {
                     var_dump($model->errors);
                 }
             } elseif (array_key_exists('old-image', $post) && $post['old-image']) {
@@ -150,7 +151,7 @@ class PageController extends AdminController
 
     /**
      * Удаляет через ajax файл превью поста
-     * @return array
+     * @return array|Response
      */
     public function actionDeletePreviewImage()
     {
@@ -158,7 +159,7 @@ class PageController extends AdminController
         $get = Yii::$app->request->get();
         $pageId = (int)$get['pageId'];
         if ($pageId) {
-            $page = Page::findOne($pageId);
+            $page = Page::findOne(['id' => $pageId]);
             if ($page && $page->image) {
                 $fileName = '@webroot' . $page->image;
                 if (file_exists($fileName)) {
@@ -166,7 +167,7 @@ class PageController extends AdminController
                 }
                 $page->image = null;
                 if ($page->save()) {
-                    return ['status' => 'success'];
+                    return $this->redirect(Yii::$app->request->referrer);
                 }
             }
         }
