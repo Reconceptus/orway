@@ -30,3 +30,11 @@ use yii\helpers\Url;
         </li>
     <? endif; ?>
 </ul>
+<br/>
+<br/>
+
+<ul class="side-menu-list">
+    <li>
+        <?= Html::a('Logout ('.Yii::$app->user->identity->username.')', Url::to('/site/logout')) ?>
+    </li>
+</ul>
