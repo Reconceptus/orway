@@ -15,7 +15,6 @@ class m180807_121730_create_pages extends Migration
         $this->createTable('page', [
             'id'         => $this->primaryKey()->unsigned(),
             'slug'       => $this->string(),
-            'image'      => $this->string(),
             'created_at' => $this->dateTime(),
             'updated_at' => $this->dateTime(),
         ]);

@@ -12,12 +12,4 @@ use yii\helpers\Html;
 <?= Html::hiddenInput('old-image', $model->image) ?>
 <?= $form->field($model, 'slug') ?>
 <?= $form->field($model, 'to_footer')->checkbox() ?>
-<div class="preview-image-block" data-id="<?= $model->id ?>">
-    <?
-    if ($model->image && file_exists(Yii::getAlias('@webroot', $model->image))) {
-        echo Html::img($model->image, ['class' => 'img-responsive preview-image']);
-        echo Html::button('delete image', ['class' => 'btn btn-admin js-delete-preview-page']);
-    }
-    ?>
-    <?= $form->field($model, 'image')->fileInput(['accept' => 'image/*', 'id' => 'preview_image']) ?>
-</div>
+
