@@ -11,22 +11,29 @@ use yii\widgets\ActiveForm;
 $this->title = 'Request password reset';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="site-request-password-reset">
-    <h1><?= Html::encode($this->title) ?></h1>
 
-    <p>Please fill out your email. A link to reset password will be sent there.</p>
+<?= \frontend\widgets\layout\Layout::widget(['viewName' => 'header-dark']) ?>
+<div id="main" class="main">
+    <div class="section section--login">
+        <div class="content content--xs">
+            <div class="login-form" style="color: #FFF">
+                <h1><?= Html::encode($this->title) ?></h1>
 
-    <div class="row">
-        <div class="col-lg-5">
-            <?php $form = ActiveForm::begin(['id' => 'request-password-reset-form']); ?>
-
-            <?= $form->field($model, 'email')->textInput(['autofocus' => true]) ?>
-
-            <div class="form-group">
-                <?= Html::submitButton('Send', ['class' => 'btn btn-primary']) ?>
+                <p>Please fill out your email. A link to reset password will be sent there.</p>
+                <?php $form = ActiveForm::begin(['id' => 'login-form']); ?>
+                <div class="login-form--fieldset">
+                    <div class="form--field">
+                        <div class="input">
+                            <?= Html::activeTextInput($model, 'email', ['autofocus' => true]) ?>
+                        </div>
+                    </div>
+                    <div class="submit">
+                        <button type="submit" class="btn btn--square-light">Send</button>
+                    </div>
+                </div>
+                <?php ActiveForm::end(); ?>
             </div>
-
-            <?php ActiveForm::end(); ?>
         </div>
     </div>
 </div>
+<?= \frontend\widgets\layout\Layout::widget(['viewName' => 'footer']) ?>
