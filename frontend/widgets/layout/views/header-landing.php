@@ -21,10 +21,6 @@ use yii\helpers\Html;
                 <nav class="nav" id="nav">
                     <?= $this->render('_menu') ?>
                     <?= \frontend\modules\translate\widgets\select\Select::widget() ?>
-                    <div class="request">
-                        <button class="btn btn--light show-modal" data-modal="request" type="button">request
-                        </button>
-                    </div>
                 </nav>
             </div>
         </div>
