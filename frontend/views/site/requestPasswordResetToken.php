@@ -14,6 +14,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
 <?= \frontend\widgets\layout\Layout::widget(['viewName' => 'header-dark']) ?>
 <div id="main" class="main">
+    <?= \common\widgets\Alert::widget() ?>
     <div class="section section--login">
         <div class="content content--xs">
             <div class="login-form" style="color: #FFF">
