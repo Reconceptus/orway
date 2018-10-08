@@ -1,6 +1,6 @@
 <?php
 return [
-    'supportEmail'                  => 'forsendtest@yandex.ru',
+    'supportEmail'                  => 'no-reply@orway.com',
     'adminEmail'                    => 'reconcept@mail.ru',
     'user.passwordResetTokenExpire' => 3600,
     'languages'                     => ['en', 'es', 'de'],
