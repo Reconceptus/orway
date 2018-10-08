@@ -79,12 +79,12 @@ body {
 }
 
 .buttons-panel {
-    width: 265px;
     height: 55px;
     background-color: #EEEEEE;
     position: fixed;
     right: 10px;
     top: 10px;
+    padding: 10px 71px 10px 10px;
 }
 
 .buttons-panel button {
