@@ -21,7 +21,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 <h1><?= Html::encode($this->title) ?></h1>
 
                 <p>Please fill out your email. A link to reset password will be sent there.</p>
-                <?php $form = ActiveForm::begin(['id' => 'login-form']); ?>
+                <?php $form = ActiveForm::begin(['id' => 'request-form']); ?>
                 <div class="login-form--fieldset">
                     <div class="form--field">
                         <div class="input">
