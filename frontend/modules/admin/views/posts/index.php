@@ -8,8 +8,8 @@ $this->title = 'Posts';
 
 $columns = [
     [
-        'class' => 'yii\grid\SerialColumn',
-        'options'   => ['style' => 'width:40px'],
+        'class'   => 'yii\grid\SerialColumn',
+        'options' => ['style' => 'width:40px'],
     ],
     [
         'attribute' => 'image',
@@ -21,6 +21,19 @@ $columns = [
     ],
     [
         'attribute' => 'name',
+    ],
+    [
+        'attribute' => 'to_main',
+        'format'    => 'html',
+        'label'    => 'on main',
+        'value'     => function ($model) {
+            if ($model->to_main) {
+                return '<span class="glyphicon glyphicon-ok"></span>';
+            }else{
+                return '<span class="glyphicon glyphicon-remove"></span>';
+            }
+
+        }
     ],
     [
         'format' => 'html',

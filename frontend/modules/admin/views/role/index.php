@@ -15,7 +15,7 @@ $this->title = "Roles";
 $i = 0;
 ?>
 <h1><?= $this->title ?></h1>
-<?= Html::a('Add role', ['create'], ['class' => 'btn btn-admin add-big-button']) ?>
+
 <table class="table table-striped table-bordered">
     <tr>
         <th>#</th>

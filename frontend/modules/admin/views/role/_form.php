@@ -36,7 +36,7 @@ $this->title = 'Edit role ' . $role->description
             <label class="control-label">Code</label>
             <?= Html::textInput('role[code]', Yii::$app->request->post('role')['code'], ["class" => "form-control"]) ?>
         </div>
-        <? if (is_array($errors['code'])): ?>
+        <? if (isset($errors['code']) && is_array($errors['code'])): ?>
             <? foreach ($errors['code'] as $error): ?>
                 <br><?= $error ?>
             <? endforeach ?>
