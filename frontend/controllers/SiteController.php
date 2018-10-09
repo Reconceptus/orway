@@ -2,6 +2,7 @@
 
 namespace frontend\controllers;
 
+use common\models\Config;
 use common\models\LoginForm;
 use common\models\Page;
 use common\models\Person;
@@ -224,8 +225,8 @@ class SiteController extends Controller
         if ($model->load($post) && $model->save()) {
             Yii::$app->mailer->compose(Yii::$app->language . '/new-request', ['model' => $model])
                 ->setFrom([Yii::$app->params['supportEmail'] => Yii::$app->name])
-                ->setTo(Yii::$app->params['adminEmail'])
-                ->setCc(Yii::$app->params['adminEmail2'])
+                ->setTo(Config::getValue('adminEmail'))
+                ->setCC(Config::getValue('adminEmail2'))
                 ->setSubject('New request')
                 ->send();
             Yii::$app->session->addFlash('success', 'Yor request was send successful');
