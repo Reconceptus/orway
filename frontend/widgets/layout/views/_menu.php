@@ -16,9 +16,9 @@ use yii\helpers\Html;
     <? if (!Yii::$app->user->isGuest): ?>
         <li><?= Html::a('logout', \yii\helpers\Url::to('/site/logout')) ?></li>
     <? endif; ?>
-    <li><?= Html::a('technology', \yii\helpers\Url::to('/blog')) ?></li>
+    <? if (\common\models\Config::getValue('hideBlog') !== '1'): ?>
+        <li><?= Html::a('technology', \yii\helpers\Url::to('/blog')) ?></li>
+    <? endif; ?>
     <li><?= Html::a('about', \yii\helpers\Url::to('/site/about')) ?></li>
-<!--    --><?// if (Yii::$app->request->getPathInfo()!==''): ?>
-        <li><a href="#" class="show-modal" data-modal="request">contact</a></li>
-<!--    --><?// endif; ?>
+    <li><a href="#" class="show-modal" data-modal="request">contact</a></li>
 </ul>
