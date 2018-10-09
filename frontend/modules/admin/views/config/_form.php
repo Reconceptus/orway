@@ -24,5 +24,5 @@ $this->title = 'Edit parameter';
         <?= $form->field($model, 'value')->label($model->name) ?>
     </div>
 
-<?= Html::submitButton('Сохранить', ['class' => 'btn btn-admin']) ?>
+<?= Html::submitButton('Save', ['class' => 'btn btn-admin']) ?>
 <? ActiveForm::end() ?>
