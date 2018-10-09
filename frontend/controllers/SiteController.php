@@ -4,6 +4,7 @@ namespace frontend\controllers;
 
 use common\models\LoginForm;
 use common\models\Page;
+use common\models\Person;
 use common\models\Request;
 use frontend\models\ContactForm;
 use frontend\models\PasswordResetRequestForm;
@@ -156,7 +157,8 @@ class SiteController extends Controller
     public function actionAbout()
     {
         $page = Page::find()->localized(Yii::$app->language)->where(['slug' => 'about'])->one();
-        return $this->render('about', ['page' => $page]);
+        $persons = Person::find()->all();
+        return $this->render('about', ['page' => $page, 'persons' => $persons]);
     }
 
     /**

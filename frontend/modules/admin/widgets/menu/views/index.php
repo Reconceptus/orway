@@ -23,6 +23,9 @@ use yii\helpers\Url;
     <? endif; ?>
     <? if (Yii::$app->user->can('users')): ?>
         <li>
+            <?= Html::a('Persons', Url::to('/admin/person')) ?>
+        </li>
+        <li>
             <?= Html::a('Users', Url::to('/admin/user')) ?>
         </li>
         <li>
