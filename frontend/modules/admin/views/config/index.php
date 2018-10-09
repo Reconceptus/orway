@@ -11,7 +11,7 @@
 
 use yii\helpers\Url;
 
-$this->title = 'Параметры';
+$this->title = 'Config';
 
 $columns = [
     [
