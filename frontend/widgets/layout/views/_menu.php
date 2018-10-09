@@ -18,7 +18,7 @@ use yii\helpers\Html;
     <? endif; ?>
     <li><?= Html::a('technology', \yii\helpers\Url::to('/blog')) ?></li>
     <li><?= Html::a('about', \yii\helpers\Url::to('/site/about')) ?></li>
-    <? if (Yii::$app->request->getPathInfo()!==''): ?>
+<!--    --><?// if (Yii::$app->request->getPathInfo()!==''): ?>
         <li><a href="#" class="show-modal" data-modal="request">contact</a></li>
-    <? endif; ?>
+<!--    --><?// endif; ?>
 </ul>
