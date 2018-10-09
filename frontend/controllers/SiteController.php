@@ -6,7 +6,6 @@ use common\models\LoginForm;
 use common\models\Page;
 use common\models\Person;
 use common\models\Request;
-use frontend\models\ContactForm;
 use frontend\models\PasswordResetRequestForm;
 use frontend\models\ResetPasswordForm;
 use frontend\models\SignupForm;
@@ -121,35 +120,6 @@ class SiteController extends Controller
     }
 
     /**
-     * Displays contact page.
-     *
-     * @return mixed
-     */
-    public function actionContact()
-    {
-        $model = new ContactForm();
-        if ($model->load(Yii::$app->request->post()) && $model->validate()) {
-            if ($model->sendEmail(Yii::$app->params['adminEmail'])) {
-                Yii::$app->session->setFlash(
-                    'success',
-                    'Thank you for contacting us. We will respond to you as soon as possible.'
-                );
-            } else {
-                Yii::$app->session->setFlash('error', 'There was an error sending your message.');
-            }
-
-            return $this->refresh();
-        } else {
-            return $this->render(
-                'contact',
-                [
-                    'model' => $model,
-                ]
-            );
-        }
-    }
-
-    /**
      * Displays about page.
      *
      * @return mixed
@@ -233,7 +203,7 @@ class SiteController extends Controller
         if ($model->load(Yii::$app->request->post()) && $model->validate() && $model->resetPassword()) {
             Yii::$app->session->setFlash('success', 'New password saved.');
 
-            return $this->goHome();
+            return $this->redirect('/site/login');
         }
 
         return $this->render(
@@ -255,7 +225,8 @@ class SiteController extends Controller
             Yii::$app->mailer->compose(Yii::$app->language . '/new-request', ['model' => $model])
                 ->setFrom([Yii::$app->params['supportEmail'] => Yii::$app->name])
                 ->setTo(Yii::$app->params['adminEmail'])
-                ->setSubject('Новый запрос')
+                ->setCc(Yii::$app->params['adminEmail2'])
+                ->setSubject('New request')
                 ->send();
             Yii::$app->session->addFlash('success', 'Yor request was send successful');
         } else {

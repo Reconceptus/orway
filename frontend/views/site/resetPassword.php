@@ -13,13 +13,13 @@ $this->params['breadcrumbs'][] = $this->title;
 
 <?= \frontend\widgets\layout\Layout::widget(['viewName' => 'header']) ?>
 <div id="main" class="main dark-theme">
-    <?= \common\widgets\Alert::widget() ?>
     <div class="section section--login">
         <div class="content content--xs">
             <div class="login-form" style="color: #FFF">
-                <h1><?= Html::encode($this->title) ?></h1>
-
-                <p>Please choose your new password:</p>
+                <h1 class="login-form--title"><?= Html::encode($this->title) ?></h1>
+                <div class="form--field">
+                    <div class="txt">Please choose your new password:</div>
+                </div>
                 <?php $form = ActiveForm::begin(['id' => 'reset-password-form']); ?>
                 <div class="login-form--fieldset">
                     <div class="form--field">
@@ -28,7 +28,7 @@ $this->params['breadcrumbs'][] = $this->title;
                         </div>
                     </div>
                     <div class="submit">
-                        <?= Html::submitButton('Send', ['class' => 'btn btn-primary']) ?>
+                        <button type="submit" class="btn btn--square-light">Send</button>
                     </div>
                 </div>
                 <?php ActiveForm::end(); ?>

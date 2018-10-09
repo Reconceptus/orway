@@ -108,6 +108,7 @@ class BlogController extends Controller
                     Yii::$app->mailer->compose(Yii::$app->language . '/new-comment', ['model' => $model])
                         ->setFrom([Yii::$app->params['supportEmail'] => Yii::$app->name])
                         ->setTo(Yii::$app->params['adminEmail'])
+                        ->setCC(Yii::$app->params['adminEmail2'])
                         ->setSubject('Новый комментарий')
                         ->send();
                     $commentBox = $this->renderPartial('_comment_box', ['model' => $model]);
