@@ -11,7 +11,7 @@ use yii\widgets\ActiveForm;
 
 /* @var $model \common\models\Config */
 
-$this->title = 'Редактирование параметра';
+$this->title = 'Edit parameter';
 ?>
 
     <h1><?= $this->title ?></h1>
