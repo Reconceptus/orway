@@ -20,7 +20,9 @@ use yii\helpers\Html;
                 </label>
                 <nav class="nav" id="nav">
                     <?= $this->render('_menu') ?>
-                    <?= \frontend\modules\translate\widgets\select\Select::widget() ?>
+                    <? if (\common\models\Config::getValue('show_lang_selector') === '1'): ?>
+                        <?= \frontend\modules\translate\widgets\select\Select::widget() ?>
+                    <? endif; ?>
                 </nav>
             </div>
         </div>

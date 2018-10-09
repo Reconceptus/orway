@@ -32,12 +32,17 @@ use yii\helpers\Url;
             <?= Html::a('Roles', Url::to('/admin/role')) ?>
         </li>
     <? endif; ?>
+    <? if (Yii::$app->user->can('admin')): ?>
+        <li>
+            <?= Html::a('Config', Url::to('/admin/config')) ?>
+        </li>
+    <? endif; ?>
 </ul>
 <br/>
 <br/>
 
 <ul class="side-menu-list">
     <li>
-        <?= Html::a('Logout ('.Yii::$app->user->identity->username.')', Url::to('/site/logout')) ?>
+        <?= Html::a('Logout (' . Yii::$app->user->identity->username . ')', Url::to('/site/logout')) ?>
     </li>
 </ul>
