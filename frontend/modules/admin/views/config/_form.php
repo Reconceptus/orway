@@ -11,7 +11,7 @@ use yii\widgets\ActiveForm;
 
 /* @var $model \common\models\Config */
 
-$this->title = 'Редактирование параметра';
+$this->title = 'Edit parameter';
 ?>
 
     <h1><?= $this->title ?></h1>
@@ -24,5 +24,5 @@ $this->title = 'Редактирование параметра';
         <?= $form->field($model, 'value')->label($model->name) ?>
     </div>
 
-<?= Html::submitButton('Сохранить', ['class' => 'btn btn-admin']) ?>
+<?= Html::submitButton('Save', ['class' => 'btn btn-admin']) ?>
 <? ActiveForm::end() ?>
