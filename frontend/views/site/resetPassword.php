@@ -11,8 +11,8 @@ $this->title = 'Reset password';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 
-<?= \frontend\widgets\layout\Layout::widget(['viewName' => 'header-dark']) ?>
-<div id="main" class="main">
+<?= \frontend\widgets\layout\Layout::widget(['viewName' => 'header']) ?>
+<div id="main" class="main dark-theme">
     <?= \common\widgets\Alert::widget() ?>
     <div class="section section--login">
         <div class="content content--xs">

@@ -11,8 +11,8 @@ use yii\widgets\ActiveForm;
 $this->title = 'Login';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<?= \frontend\widgets\layout\Layout::widget(['viewName' => 'header-dark']) ?>
-    <div id="main" class="main">
+<?= \frontend\widgets\layout\Layout::widget(['viewName' => 'header']) ?>
+    <div id="main" class="main dark-theme">
         <div class="section section--login">
             <div class="content content--xs">
                 <div class="login-form">
