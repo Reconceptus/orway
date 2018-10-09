@@ -2,6 +2,7 @@
 
 /* @var $this yii\web\View */
 /* @var $page \common\models\Page */
+/* @var $persons \common\models\Person[] */
 
 $this->title = 'About';
 $this->params['breadcrumbs'][] = $this->title;
@@ -10,7 +11,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <div id="main" class="main dark-theme">
         <div class="section">
             <div class="about-head">
-                <div class="bg-word">Our story</div>
+                <div class="bg-word moving-word">Our story</div>
                 <div class="content content--sm">
                     <h1 class="page-title"><?= $page ? $page->name : 'About Us' ?></h1>
                 </div>
@@ -55,6 +56,32 @@ $this->params['breadcrumbs'][] = $this->title;
                     </div>
                 </div>
             </div>
+        </div>
+        <div class="section">
+            <div class="about-head team-head">
+                <div class="bg-word moving-word">Our team</div>
+                <div class="content content--sm">
+                    <h1 class="page-title">Team</h1>
+                </div>
+            </div>
+            <div class="about-team">
+                <div class="content content--md">
+                    <div class="about-team--list">
+                        <? foreach ($persons as $person): ?>
+                            <div class="about-team--item">
+                                <div class="figure">
+                                    <img src="<?= $person->image ?>" alt="<?= $person->name ?>">
+                                </div>
+                                <div class="about-team--person-name"><?= $person->name ?></div>
+                                <div class="about-team--person-position"><?= $person->position ?></div>
+                                <div class="about-team--person-text"><?= $person->description ?>
+                                </div>
+                            </div>
+                        <? endforeach; ?>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </div>
 <?= \frontend\widgets\layout\Layout::widget(['viewName' => 'footer']) ?>
