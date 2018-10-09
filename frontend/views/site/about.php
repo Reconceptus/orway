@@ -6,8 +6,8 @@
 $this->title = 'About';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<?= \frontend\widgets\layout\Layout::widget(['viewName' => 'header-dark']) ?>
-    <div id="main" class="main">
+<?= \frontend\widgets\layout\Layout::widget(['viewName' => 'header']) ?>
+    <div id="main" class="main dark-theme">
         <div class="section">
             <div class="about-head">
                 <div class="bg-word">Our story</div>
