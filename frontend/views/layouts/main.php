@@ -19,6 +19,7 @@ AppAsset::register($this);
     <?= Html::csrfMetaTags() ?>
     <title><?= Html::encode($this->title) ?></title>
     <?php $this->head() ?>
+    <?= \common\models\Config::getValue('GoogleAnalytics') ?>
 </head>
 <body>
 <?php $this->beginBody() ?>
