@@ -6,6 +6,7 @@ use common\models\Config;
 use common\models\LoginForm;
 use common\models\Page;
 use common\models\Person;
+use common\models\Post;
 use common\models\Request;
 use frontend\models\PasswordResetRequestForm;
 use frontend\models\ResetPasswordForm;
@@ -76,7 +77,8 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        return $this->render('index');
+        $issetArticles = Post::find()->localized(Yii::$app->language)->where(['to_main' => 1])->limit(3)->orderBy(['id' => SORT_DESC])->exists();
+        return $this->render($issetArticles ? 'index' : 'index-short');
     }
 
     /**
