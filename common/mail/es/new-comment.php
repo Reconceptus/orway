@@ -1,6 +1,5 @@
-<h1>Письмо на испанском</h1>
-<b>Был опубликован новый комментарий</b><br/>
-Имя: <?=$model->name?> <br/>
+<b>New comment</b><br/>
+Name: <?=$model->name?> <br/>
 Email: <?=$model->email?><br/>
-Текст: <?=$model->text?><br/>
-<?= \yii\helpers\Html::a('Посмотреть', Yii::$app->request->getHostInfo() . '/' . Yii::$app->language . '/blog/post/' . $model->post->slug) ?>
+Text: <?=$model->text?><br/>
+<?= \yii\helpers\Html::a('Show', Yii::$app->request->getHostInfo() . '/' . Yii::$app->language . '/blog/' . $model->post->slug) ?>
