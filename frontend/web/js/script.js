@@ -54,6 +54,11 @@ $(function () {
 
     $('.landing').imagesLoaded( function() {
         $('.loader').removeClass('show');
+        if ($('.section--blog').length == 0) {
+            $('[data-elements=3] .line').addClass('not-complited');
+            $('[data-elements=3] .light').addClass('not-complited');
+            $('.boxes_before_footer').hide();
+        }
         setTimeout(function () {
             $('.landing').removeClass('begin');
             if($('html').hasClass('mobile')){

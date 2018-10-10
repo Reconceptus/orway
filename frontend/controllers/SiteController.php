@@ -78,7 +78,7 @@ class SiteController extends Controller
     public function actionIndex()
     {
         $issetArticles = Post::find()->localized(Yii::$app->language)->where(['to_main' => 1])->exists();
-        return $this->render($issetArticles ? 'index' : 'index-short');
+        return $this->render('index', ['issetArticles' => $issetArticles]);
     }
 
     /**
