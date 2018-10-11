@@ -29,11 +29,11 @@ class PostsController extends AdminController
     {
         $behaviors = parent::behaviors();
         $behaviors['access'] = [
-            'class' => AccessControl::className(),
+            'class'        => AccessControl::className(),
             'denyCallback' => function ($rule, $action) {
                 return $this->redirect('/');
             },
-            'rules' => [
+            'rules'        => [
                 [
                     'actions' => [],
                     'allow'   => true,
@@ -53,10 +53,10 @@ class PostsController extends AdminController
     {
         return [
             'image-upload' => [
-                'class'            => 'vova07\imperavi\actions\UploadFileAction',
-                'url'              => '/uploads/images/posts', // Directory URL address, where files are stored.
-                'path'             => '@webroot/uploads/images/posts', // Or absolute path to directory where files are stored.
-                'translit'         => true,
+                'class'    => 'vova07\imperavi\actions\UploadFileAction',
+                'url'      => '/uploads/images/posts', // Directory URL address, where files are stored.
+                'path'     => '@webroot/uploads/images/posts', // Or absolute path to directory where files are stored.
+                'translit' => true,
             ],
             ''
         ];
@@ -176,7 +176,7 @@ class PostsController extends AdminController
         $get = Yii::$app->request->get();
         $postId = (int)$get['postId'];
         if ($postId) {
-            $post = Post::findOne(['id'=>$postId]);
+            $post = Post::findOne(['id' => $postId]);
             if ($post && $post->image) {
                 $fileName = '@webroot' . $post->image;
                 if (file_exists($fileName)) {
@@ -189,6 +189,19 @@ class PostsController extends AdminController
             }
         }
         return ['status' => 'fail'];
+    }
+
+    /**
+     * @param $id
+     * @return Response
+     * @throws NotFoundHttpException
+     * @throws \Throwable
+     * @throws \yii\db\StaleObjectException
+     */
+    public function actionDelete($id)
+    {
+        $this->findModel($id)->delete();
+        return $this->redirect('/admin/posts');
     }
 
     /**

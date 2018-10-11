@@ -20,7 +20,10 @@ $this->title = 'Edit ' . $model->username
 ?>
 <h1><?= $this->title ?></h1>
 
-<?php $form = ActiveForm::begin(); ?>
+<?php $form = ActiveForm::begin([
+    'enableAjaxValidation' => true,
+    'id'                   => 'user-form'
+]); ?>
 <?= $form->field($model, 'username') ?>
 <?= $form->field($model, 'email') ?>
 <div class="form-group">

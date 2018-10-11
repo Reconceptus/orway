@@ -14,6 +14,8 @@ use Yii;
 use yii\data\ActiveDataProvider;
 use yii\filters\AccessControl;
 use yii\web\NotFoundHttpException;
+use yii\web\Response;
+use yii\widgets\ActiveForm;
 
 class UserController extends AdminController
 {
@@ -83,11 +85,15 @@ class UserController extends AdminController
     /**
      * @param $model User
      * @param $back
-     * @return string|\yii\web\Response
+     * @return string|\yii\web\Response|array
      * @throws \yii\base\Exception
      */
     public function modify($model, $back)
     {
+        if (Yii::$app->request->isAjax && $model->load(Yii::$app->request->post())) {
+            Yii::$app->response->format = Response::FORMAT_JSON;
+            return ActiveForm::validate($model);
+        }
         $auth = Yii::$app->authManager;
         $roles = $auth->getRoles();
         $rolesItems = [];

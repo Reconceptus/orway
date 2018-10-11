@@ -176,6 +176,20 @@ class PageController extends AdminController
 
     /**
      * @param $id
+     * @return Response
+     * @throws NotFoundHttpException
+     * @throws \Throwable
+     * @throws \yii\db\StaleObjectException
+     */
+    public function actionDelete($id)
+    {
+        $this->findModel($id)->delete();
+        return $this->redirect('/admin/page');
+    }
+
+
+    /**
+     * @param $id
      * @return Page|null
      * @throws NotFoundHttpException
      */
