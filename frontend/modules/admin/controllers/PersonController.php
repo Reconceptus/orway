@@ -126,6 +126,20 @@ class PersonController extends AdminController
 
     /**
      * @param $id
+     * @return Response
+     * @throws NotFoundHttpException
+     * @throws \Throwable
+     * @throws \yii\db\StaleObjectException
+     */
+    public function actionDelete($id)
+    {
+        $model = $this->findModel($id);
+        $model->delete();
+        return $this->redirect('/admin/person');
+    }
+
+    /**
+     * @param $id
      * @return Person|null|ActiveRecord
      * @throws NotFoundHttpException
      */
