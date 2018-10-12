@@ -891,7 +891,7 @@ $this->title = 'Orway';
             </div>
         </section>
 
-        <section class="slide" data-slide="9">
+        <section class="slide <?= $issetArticles ? '' : 'has-footer' ?>" data-slide="9">
             <div class="head">
                 <h1 class="title">partners</h1>
             </div>
@@ -909,6 +909,9 @@ $this->title = 'Orway';
                     <img src="svg/landing/partner_4.svg" alt="manganorobot">
                 </div>
             </div>
+            <? if(!$issetArticles):?>
+                <?= \frontend\widgets\layout\Layout::widget(['viewName' => 'footer-landing']) ?>
+            <? endif;?>
         </section>
         <? if ($issetArticles): ?>
         <section class="slide" data-slide="10">
