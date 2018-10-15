@@ -518,7 +518,7 @@ $this->title = 'Orway';
                             </div>
                         </div>
                     </div>
-                    <div class="subtitle">When it's tuned to a comfotable usage it can be easily hacked. All available
+                    <div class="subtitle">When it's tuned to a comfortable usage it can be easily hacked. All available
                         biometric technologies can be easily spoofed.
                     </div>
                 </div>
@@ -825,9 +825,9 @@ $this->title = 'Orway';
             <div class="carousel">
                 <div class="owl-carousel">
                     <div class="item" data-hash="01">
-                        <div class="date">1989 - 2013</div>
+                        <div class="date">1984 - 2013</div>
                         <div class="item-dot"></div>
-                        <div class="text">24 years of Exploaring</div>
+                        <div class="text">29 years of scientific research in AI and R&D of biometric systems</div>
                     </div>
                     <div class="item" data-hash="02">
                         <div class="date">2013</div>
