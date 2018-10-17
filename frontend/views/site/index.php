@@ -416,7 +416,16 @@ $this->title = 'Orway';
             </div>
         </section>
         <section class="slide" data-slide="2">
-            <div class="slide-left"></div>
+            <div class="slide-left">
+                <div class="slide-img">
+                    <div class="switch-box">
+                        <div class="light"></div>
+                        <div class="switcher">
+                            <img src="assets/images/landing/switcher.png" alt="switcher">
+                        </div>
+                    </div>
+                </div>
+            </div>
             <div class="slide-right">
                 <div class="list">
                     <ul>
@@ -430,6 +439,7 @@ $this->title = 'Orway';
                     </ul>
                 </div>
             </div>
+            <div class="tablet-light"></div>
         </section>
         <section class="slide" data-slide="3">
             <div class="slide-left"></div>
@@ -889,6 +899,7 @@ $this->title = 'Orway';
                     </svg>
                 </div>
             </div>
+            <div class="tablet-light"></div>
         </section>
 
         <section class="slide <?= $issetArticles ? '' : 'has-footer' ?>" data-slide="9">
@@ -909,9 +920,10 @@ $this->title = 'Orway';
                     <img src="svg/landing/partner_4.svg" alt="manganorobot">
                 </div>
             </div>
-            <? if(!$issetArticles):?>
+            <? if (!$issetArticles): ?>
                 <?= \frontend\widgets\layout\Layout::widget(['viewName' => 'footer-landing']) ?>
-            <? endif;?>
+            <? endif; ?>
+            <div class="tablet-light"></div>
         </section>
         <? if ($issetArticles): ?>
         <section class="slide" data-slide="10">
