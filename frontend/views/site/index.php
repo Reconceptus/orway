@@ -930,3 +930,48 @@ $this->title = 'Orway';
             <?= \frontend\widgets\articles\Articles::widget() ?>
             <?= \frontend\widgets\layout\Layout::widget(['viewName' => 'footer-landing']) ?>
             <? endif; ?>
+            <script>
+
+                $('.landing').imagesLoaded( function() {
+                    $('.loader').removeClass('show');
+                    setTimeout(function () {
+                        $('.landing').removeClass('begin');
+                        if($('html').hasClass('mobile')){
+                            var slidesWithTitles = [3,4,5,6,7,8,9],
+                                slidesWithAnimImg = [3,4,5];
+                            $('.landing').mobileSliding(slidesWithTitles,slidesWithAnimImg);
+                        }
+                    },200);
+                    setTimeout(function () {
+                        $('.owl-carousel').owlCarousel({
+                            loop:false,
+                            nav:false,
+                            dots:false,
+                            URLhashListener:true,
+                            mouseDrag:true,
+                            responsive:{
+                                0:{
+                                    items:1,
+                                    startPosition: '05'
+                                },
+                                480:{
+                                    items:2,
+                                    startPosition: '05'
+                                },
+                                768:{
+                                    items:3,
+                                    startPosition: '04'
+                                },
+                                1000:{
+                                    startPosition: '03',
+                                    margin:10,
+                                    items:5
+                                }
+                            }
+                        });
+                        if($('html').hasClass('desktop')){
+                            $('.landing').startSliding('#wrapper','desktop');
+                        }
+                    },2000);
+                });
+            </script>
