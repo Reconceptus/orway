@@ -7,7 +7,7 @@ use yii\web\AssetBundle;
 /**
  * Main frontend application asset bundle.
  */
-class AppAsset extends AssetBundle
+class GridAsset extends AssetBundle
 {
     public $jsOptions = ['position' => \yii\web\View::POS_END];
     public $publishOptions = [
@@ -17,16 +17,12 @@ class AppAsset extends AssetBundle
     public $baseUrl = '@web';
     public $sourcePath = '@webroot';
     public $css = [
-        'css/styles.min.css',
-        'css/common.css',
+
     ];
     public $js = [
-        'js/script.js',
-        'js/imagesloaded.pkgd.min.js',
-        'js/owl.carousel.min.js',
-        'js/main.min.js',
+        'js/grid.js',
     ];
     public $depends = [
-        'yii\web\YiiAsset',
+        'frontend\assets\AppAsset',
     ];
 }
