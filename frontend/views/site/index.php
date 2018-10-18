@@ -421,7 +421,7 @@ $this->title = 'Orway';
                     <div class="switch-box">
                         <div class="light"></div>
                         <div class="switcher">
-                            <img src="assets/images/landing/switcher.png" alt="switcher">
+                            <img src="images/landing/switcher.png" alt="switcher">
                         </div>
                     </div>
                 </div>
