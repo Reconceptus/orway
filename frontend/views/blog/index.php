@@ -14,6 +14,7 @@ use yii\widgets\ListView;
 /* @var $tags \common\models\Tag[] */
 /* @var $showTags bool */
 /* @var $mainTag string */
+\frontend\assets\GridAsset::register($this);
 ?>
 <?= \frontend\widgets\layout\Layout::widget(['viewName' => 'header']) ?>
 <div id="main" class="main">
