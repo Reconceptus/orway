@@ -926,9 +926,9 @@ $this->title = 'Orway';
                 </div>
             </div>
             <? if (!$issetArticles): ?>
+                <div class="tablet-light"></div>
                 <?= \frontend\widgets\layout\Layout::widget(['viewName' => 'footer-landing']) ?>
             <? endif; ?>
-            <div class="tablet-light"></div>
         </section>
         <? if ($issetArticles): ?>
         <section class="slide" data-slide="10">
