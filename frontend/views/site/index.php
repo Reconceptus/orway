@@ -534,6 +534,7 @@ $this->title = 'Orway';
                 </div>
             </div>
             <div class="word">unreliable</div>
+            <div class="tablet-light"></div>
         </section>
         <section class="slide" data-slide="4">
             <div class="slide-left"></div>
@@ -666,6 +667,7 @@ $this->title = 'Orway';
                 </div>
             </div>
             <div class="word">Uncomfortable</div>
+            <div class="tablet-light"></div>
         </section>
         <section class="slide" data-slide="5">
             <div class="slide-left"></div>
@@ -773,6 +775,7 @@ $this->title = 'Orway';
                     </div>
                 </div>
             </div>
+            <div class="tablet-light"></div>
         </section>
         <section class="slide" data-slide="6">
             <div class="head">
@@ -801,6 +804,7 @@ $this->title = 'Orway';
                             </div>
                         </div>
                     </div>
+                    <div class="tablet-light"></div>
                 </div>
             </div>
         </section>
@@ -824,6 +828,7 @@ $this->title = 'Orway';
                             <div class="item-title">Licensing</div>
                         </div>
                     </div>
+                    <div class="tablet-light"></div>
                 </div>
             </div>
 
