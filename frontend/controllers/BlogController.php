@@ -76,7 +76,7 @@ class BlogController extends Controller
     public function actionView()
     {
         $slug = Yii::$app->request->get('slug');
-        $model = Post::find()->where(['slug' => $slug])->localized(Yii::$app->language)->one();
+        $model = Post::find()->where(['slug' => $slug, 'status' => Post::STATUS_PUBLISHED])->localized(Yii::$app->language)->one();
         if (!$model) {
             throw new NotFoundHttpException('Post not found');
         }
