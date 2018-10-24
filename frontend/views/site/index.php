@@ -3,7 +3,8 @@
 /* @var $this yii\web\View */
 /* @var $issetArticles bool */
 
-$this->title = 'Orway';
+$this->title = 'Orway - official website';
+$this->registerMetaTag(['name' => 'description', 'content' => 'RFA-TECHNOLOGY - the world`s first and the only biometric technology that can COMPLETELY eliminate passwords']);
 ?>
 <?= \frontend\widgets\layout\Layout::widget(['viewName' => 'header-landing']) ?>
 <div class="loader show">
